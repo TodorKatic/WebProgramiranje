@@ -1,0 +1,174 @@
+﻿@using Web1Proj.Models
+@{ 
+    FitnessCentar fitnessCentar = (FitnessCentar)HttpContext.Current.Application["FitnessCentar"];
+    List<GrupniTrening> grupniTrenings = (List<GrupniTrening>)HttpContext.Current.Application["IzabraniTreninzi"];
+    List<Komentar> komentars = (List<Komentar>)HttpContext.Current.Application["IzabraniKomentari"];
+    Korisnik korisnik = (Korisnik)Session["UlogovaniKorisnik"];
+}
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto; /*dodaje scroll bar za navbar samo kad je potrebno*/
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+        .navbar a {
+            float: left;
+            width: 20%;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .navbar a:hover {
+                background-color: black;
+            }
+
+    .backcontainer {
+        width: 100%;
+        height: 100vh;
+        background-color: aquamarine;
+        border-radius: 4px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: aqua;
+        width: 90%;
+        margin: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: goldenrod
+    }
+</style>
+</html>
+<body>
+    <div class="backcontainer">
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Naziv</th>
+
+                    <th>Adresa</th>
+
+                    <th>Godina otvaranja</th>
+
+                    <th>Vlasnik</th>
+                    <th>Mesecna clanarina</th>
+                    <th>Godisnja clanarina</th>
+
+                    <th>Cena jednog treninga</th>
+                    <th>Cena grupnog treninga</th>
+                    <th>Trening sa personalnim trenerom</th>
+                </tr>
+                <tr>
+                    <td>@fitnessCentar.Naziv</td>
+                    <td>@fitnessCentar.Adresa</td>
+                    <td>@fitnessCentar.GodinaOtvaranja</td>
+                    <td>@fitnessCentar.VlasnikCen</td>
+                    <td>@fitnessCentar.CenaMesec</td>
+                    <td>@fitnessCentar.CenaGodina</td>
+                    <td>@fitnessCentar.CenaJedan</td>
+                    <td>@fitnessCentar.CenaGrupni</td>
+                    <td>@fitnessCentar.CenaPersonalniTrener</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Naziv treninga</th>
+                    <th>Tip treninga</th>
+                    <th>Fitness centar</th>
+                    <th>Trajanje treninga</th>
+                    <th>Vreme odzavanja</th>
+                    <th>Max broj posetilaca</th>
+                    <th>Prijavljen broj</th>
+                    @{
+                        if (korisnik != null)
+                        {
+                            if (korisnik.UlogaKorisnika == Enums.Uloga.Posetilac)
+                            {
+                                <th></th>
+                            }
+
+                        }
+                    }
+                </tr>
+                @{
+                    foreach (var t in grupniTrenings)
+                    {
+                        <tr>
+                            <td>@t.Naziv</td>
+                            <td>@t.TipTreninga</td>
+                            <td>@t.FitnesCentar</td>
+                            <td>@t.Trajanje</td>
+                            <td>@t.VremeOdrzavanja</td>
+                            <td>@t.MaxBroj</td>
+                            <td>@t.Posetioci.Count</td>
+                            @{
+                                if (korisnik != null)
+                                {
+                                    if (korisnik.UlogaKorisnika == Enums.Uloga.Posetilac)
+                                    {
+                                        <td>
+                                            <form action="~/Posetilac/Prijava" method="post">
+                                                <input type="hidden" value="@t.Naziv" name="naziv" />
+                                                <input type="submit" value="Prijavi Se" />
+                                            </form>
+                                        </td>
+                                    }
+                                }
+
+                            }
+                        </tr>
+                    }
+                }
+            </table>
+            <table class="table table-striped table-primary">
+                <tr>
+                    <th>Korisnik</th>
+
+                    <th>Ocena</th>
+
+                    <th>Komentar</th>
+                </tr>
+                @{
+                    foreach (var komentar in komentars)
+                    {
+                        <tr>
+                            <td>@komentar.Posetilac</td>
+                            <td>@komentar.Ocena</td>
+                            <td>@komentar.TekstKomentara</td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </div>

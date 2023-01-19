@@ -1,0 +1,116 @@
+﻿@using Web1Proj.Models
+@{ 
+    GrupniTrening grupniTrening = (GrupniTrening)HttpContext.Current.Application["Trening"];
+}
+
+<head>
+    <style>
+
+        body {
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .backcontainer {
+            width: 100%;
+            margin: auto;
+            background-color: aquamarine;
+            height: 100vh;
+            padding: 50px;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: lavender;
+            width: 30%;
+            margin: auto;
+            border-radius: 4px
+        }
+
+        input[type=text], [type=password], input[type=email] {
+            width: 100%;
+            padding: 10px 15px; 
+            margin: 10px 0px; 
+            display: inline-block;
+            border-radius: 4px; 
+            border: 1px solid #000000;
+            box-sizing: border-box; 
+        }
+
+        select, input[type=date] {
+            width: 100%;
+            padding: 10px 20px; 
+            margin: 10px 0px; 
+            display: inline-block;
+            border-radius: 4px;
+            border: 1px solid #000000;
+            box-sizing: border-box; 
+        }
+
+        input[type=submit], input[type=button] {
+            width: 100%;
+            margin: 0px 0px 5px 0px;
+            background-color: palevioletred;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="backcontainer">
+        <div class="col-lg-offset-5">
+            @{
+                if (ViewBag.Message != "")
+                {
+                    <h2>@ViewBag.Message</h2>
+                }
+            }
+
+            <form action="/Trener/Modifikacija" method="post">
+
+
+
+                <div class="form-group">
+                    <label for="tip">Tip:</label>
+                    @{
+                        <select name="tip" class="form-control">
+                            <option value="@Enums.TipTreninga.BodyPump">Body pump</option>
+                            <option value="@Enums.TipTreninga.LesMillsTone">Les mills tone</option>
+                            <option value="@Enums.TipTreninga.Yoga">Yoga</option>
+                        </select>
+                    }
+                </div>
+
+
+                <div class="form-group">
+                    <label for="trajanje">Trajanje:</label>
+                    <input type="text" class="form-control" name="trajanje" value="@grupniTrening.Trajanje" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="ucesnika">Maksimalan broj posetilaca</label>
+                    <input type="text" class="form-control" name="ucesnika" value="@grupniTrening.MaxBroj" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="vremeTreninga">Vreme odrzavanja:</label>
+                    <input type="datetime-local" class="form-control" name="datum" />
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Modifikuj" />
+
+                    <a href="/Home/Index"><input type="button" style="background-color:red; cursor:pointer;" value="Cancel" /></a>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GrupniXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GrupniTrenings>
+    <GrupniTrening>
+      <Naziv>BodyPump1</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>30</Trajanje>
+      <VremeOdrzavanja>07/09/2022 12:18</VremeOdrzavanja>
+      <MaxBroj>13</MaxBroj>
+      <Posetioci>
+        <string>Slavica</string>
+      </Posetioci>
+      <Trener>Krle</Trener>
+      <Obrisan>false</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>BodyPump2</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>30</Trajanje>
+      <VremeOdrzavanja>07/09/2022 12:19</VremeOdrzavanja>
+      <MaxBroj>13</MaxBroj>
+      <Posetioci>
+        <string>Mihajlo</string>
+      </Posetioci>
+      <Trener>Krle</Trener>
+      <Obrisan>false</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>BodyPump4</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>30</Trajanje>
+      <VremeOdrzavanja>15/09/2022 12:19</VremeOdrzavanja>
+      <MaxBroj>13</MaxBroj>
+      <Posetioci />
+      <Trener>Krle</Trener>
+      <Obrisan>true</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>Novi2</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>111</Trajanje>
+      <VremeOdrzavanja>21/09/2022 21:31</VremeOdrzavanja>
+      <MaxBroj>5</MaxBroj>
+      <Posetioci />
+      <Trener>Krle</Trener>
+      <Obrisan>true</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>Krletov</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>24</Trajanje>
+      <VremeOdrzavanja>30/09/2022 20:09</VremeOdrzavanja>
+      <MaxBroj>12</MaxBroj>
+      <Posetioci />
+      <Trener>Krle</Trener>
+      <Obrisan>true</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>gggg</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>24</Trajanje>
+      <VremeOdrzavanja>30/09/2022 21:05</VremeOdrzavanja>
+      <MaxBroj>12</MaxBroj>
+      <Posetioci>
+        <string>Slavica</string>
+      </Posetioci>
+      <Trener>Krle</Trener>
+      <Obrisan>false</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>Stari</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>FitnessZone</FitnesCentar>
+      <Trajanje>30</Trajanje>
+      <VremeOdrzavanja>07/09/2022 12:18</VremeOdrzavanja>
+      <MaxBroj>13</MaxBroj>
+      <Posetioci>
+        <string>Slavica</string>
+      </Posetioci>
+      <Trener>Krle</Trener>
+      <Obrisan>false</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>TTTT</Naziv>
+      <TipTreninga>LesMillsTone</TipTreninga>
+      <FitnesCentar>TTTT</FitnesCentar>
+      <Trajanje>45</Trajanje>
+      <VremeOdrzavanja>30/09/2022 21:27</VremeOdrzavanja>
+      <MaxBroj>12</MaxBroj>
+      <Posetioci>
+        <string>Slavica</string>
+      </Posetioci>
+      <Trener>Trener1</Trener>
+      <Obrisan>false</Obrisan>
+    </GrupniTrening>
+    <GrupniTrening>
+      <Naziv>BodyPump3</Naziv>
+      <TipTreninga>BodyPump</TipTreninga>
+      <FitnesCentar>Kiki</FitnesCentar>
+      <Trajanje>30</Trajanje>
+      <VremeOdrzavanja>22/09/2022 21:50</VremeOdrzavanja>
+      <MaxBroj>13</MaxBroj>
+      <Posetioci>
+        <string>Slavica</string>
+      </Posetioci>
+      <Trener>Krle</Trener>
+      <Obrisan>false</Obrisan>
+    </GrupniTrening>
+  </GrupniTrenings>
+</GrupniXML>

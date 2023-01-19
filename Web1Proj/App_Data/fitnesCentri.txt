@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FitnessXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FitnessCentars>
+    <FitnessCentar>
+      <Naziv>FitnessZone</Naziv>
+      <Adresa>Tose Tosica 20, Backa Topola, 24300</Adresa>
+      <GodinaOtvaranja>2005</GodinaOtvaranja>
+      <VlasnikCen>Loki</VlasnikCen>
+      <CenaMesec>2200</CenaMesec>
+      <CenaGodina>23000</CenaGodina>
+      <CenaJedan>300</CenaJedan>
+      <CenaGrupni>400</CenaGrupni>
+      <CenaPersonalniTrener>1500</CenaPersonalniTrener>
+      <Obrisan>false</Obrisan>
+    </FitnessCentar>
+    <FitnessCentar>
+      <Naziv>Krle</Naziv>
+      <Adresa>Tose Tosica 20, Backa Topola, 24300</Adresa>
+      <GodinaOtvaranja>2005</GodinaOtvaranja>
+      <VlasnikCen>Tor</VlasnikCen>
+      <CenaMesec>2200</CenaMesec>
+      <CenaGodina>23000</CenaGodina>
+      <CenaJedan>300</CenaJedan>
+      <CenaGrupni>400</CenaGrupni>
+      <CenaPersonalniTrener>1500</CenaPersonalniTrener>
+      <Obrisan>true</Obrisan>
+    </FitnessCentar>
+    <FitnessCentar>
+      <Naziv>Kiki</Naziv>
+      <Adresa>Tose Tosica 20, Backa Topola, 24300</Adresa>
+      <GodinaOtvaranja>2006</GodinaOtvaranja>
+      <VlasnikCen>Tor</VlasnikCen>
+      <CenaMesec>2203</CenaMesec>
+      <CenaGodina>23000</CenaGodina>
+      <CenaJedan>300</CenaJedan>
+      <CenaGrupni>400</CenaGrupni>
+      <CenaPersonalniTrener>1512</CenaPersonalniTrener>
+      <Obrisan>false</Obrisan>
+    </FitnessCentar>
+    <FitnessCentar>
+      <Naziv>Novi</Naziv>
+      <Adresa>Sime Simica 25, Novi Sad, 21000</Adresa>
+      <GodinaOtvaranja>2003</GodinaOtvaranja>
+      <VlasnikCen>Tor</VlasnikCen>
+      <CenaMesec>1200</CenaMesec>
+      <CenaGodina>10000</CenaGodina>
+      <CenaJedan>123</CenaJedan>
+      <CenaGrupni>400</CenaGrupni>
+      <CenaPersonalniTrener>1512</CenaPersonalniTrener>
+      <Obrisan>true</Obrisan>
+    </FitnessCentar>
+    <FitnessCentar>
+      <Naziv>TTTT</Naziv>
+      <Adresa>GER</Adresa>
+      <GodinaOtvaranja>2003</GodinaOtvaranja>
+      <VlasnikCen>Tor</VlasnikCen>
+      <CenaMesec>1200</CenaMesec>
+      <CenaGodina>10000</CenaGodina>
+      <CenaJedan>200</CenaJedan>
+      <CenaGrupni>400</CenaGrupni>
+      <CenaPersonalniTrener>1512</CenaPersonalniTrener>
+      <Obrisan>false</Obrisan>
+    </FitnessCentar>
+    <FitnessCentar>
+      <Naziv>Sjuuu</Naziv>
+      <Adresa>1e2</Adresa>
+      <GodinaOtvaranja>2006</GodinaOtvaranja>
+      <VlasnikCen>Tor</VlasnikCen>
+      <CenaMesec>2203</CenaMesec>
+      <CenaGodina>10000</CenaGodina>
+      <CenaJedan>200</CenaJedan>
+      <CenaGrupni>444</CenaGrupni>
+      <CenaPersonalniTrener>1512</CenaPersonalniTrener>
+      <Obrisan>true</Obrisan>
+    </FitnessCentar>
+  </FitnessCentars>
+</FitnessXML>

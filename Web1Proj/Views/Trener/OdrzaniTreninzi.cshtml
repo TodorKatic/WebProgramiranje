@@ -1,0 +1,163 @@
+﻿@using Web1Proj.Models
+
+@{ 
+    IEnumerable < GrupniTrening > grupniTrenings = (IEnumerable<GrupniTrening>)HttpContext.Current.Application["ProsliTreninzi"];
+
+}
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: rebeccapurple;
+        overflow: auto;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+        .navbar a {
+            float: left;
+            width: 20%;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .navbar a:hover {
+                background-color: black;
+            }
+
+    .backcontainer {
+        width: 100%;
+        height: 100vh;
+        background-color: aquamarine;
+        border-radius: 4px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: aqua;
+        width: 90%;
+        margin: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 16px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    tr:nth-child(even) {
+        background-color: goldenrod
+    }
+</style>
+</html>
+<body>
+
+    <div class="backcontainer">
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
+                <a href="~/Home/Index" class="navbar-brand">Pocetna strana</a>
+            </nav>
+
+
+            <form action="/Trener/Search" method="post">
+                <div class="form-inline">
+                    <label for="naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" />
+                    <label for="tip">Tip treninga</label>
+                    @{
+                        <select name="tip" class="form-control">
+                            <option value="">Tip treninga</option>
+                            <option value="@Enums.TipTreninga.BodyPump">Body pump</option>
+                            <option value="@Enums.TipTreninga.LesMillsTone">Les mills tone</option>
+                            <option value="@Enums.TipTreninga.Yoga">Yoga</option>
+                        </select>
+                    }
+                    <label for="od">Minimalno vreme odrzavanja</label>
+                    <input type="date" class="form-control" name="od" />
+
+                    <label for="do">Maksimalno vreme odrzavanja</label>
+                    <input type="date" class="form-control" name="do" />
+
+
+
+                    <input type="submit" class="btn btn-primary" value="Pretrazi" />
+                </div>
+            </form>
+
+            <br />
+
+            <form action="/Trener/Sort" method="post">
+                <div class="form-inline">
+                    <label for="vrsta">Sortiraj po:</label>
+                    <select name="vrsta" class="form-control">
+                        <option value="naziv">Nazivu</option>
+                        <option value="tip">Tipu treninga</option>
+                        <option value="datum">Vreme odrzavanja</option>
+                    </select>
+
+                    <select name="vrednost" class="form-control">
+                        <option value="rastuce">Rastuce</option>
+                        <option value="opadajuce">Opadajuce</option>
+                    </select>
+                    <input type="submit" class="btn btn-primary" value="Sortiraj" />
+                </div>
+
+            </form>
+            <br />
+            <div class="container">
+                <table class="table table-striped table-primary">
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Tip treninga</th>
+                        <th>Fitness centar</th>
+                        <th>Trajanje</th>
+                        <th>vreme odrzavanja</th>
+                        <th>Maksimalno ucesnika</th>
+                        <th>Prijavljenih ucesnika</th>
+                        <th></th>
+
+                    </tr>
+                    @{
+                        foreach (var trening in grupniTrenings)
+                        {
+                            <tr>
+                                <td>@trening.Naziv</td>
+                                <td>@trening.TipTreninga</td>
+                                <td>@trening.FitnesCentar</td>
+                                <td>@trening.Trajanje</td>
+                                <td>@trening.VremeOdrzavanja</td>
+                                <td>@trening.MaxBroj</td>
+                                <td>@trening.Posetioci.Count</td>
+
+                                <td>
+                                    <form action="/Trener/PrikaziPosetioce" method="post">
+                                        <input type="submit" class="btn btn-primary" value="Prikazi posetioce" />
+                                        <input type="hidden" name="naziv" value="@trening.Naziv" />
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

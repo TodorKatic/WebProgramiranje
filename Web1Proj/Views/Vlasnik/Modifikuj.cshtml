@@ -1,0 +1,102 @@
+﻿@using Web1Proj.Models
+@{ 
+    FitnessCentar fitness = (FitnessCentar)HttpContext.Current.Application["Centar"];
+}
+<html>
+<style>
+    body {
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    .backcontainer {
+        width: 100%;
+        margin: auto;
+        background-color: aquamarine;
+        height: 100vh;
+        padding: 50px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: lavender;
+        width: 30%;
+        margin: auto;
+        border-radius: 4px
+    }
+
+    input[type=text], [type=password], input[type=email] {
+        width: 100%;
+        padding: 10px 15px;
+        margin: 10px 0px;
+        display: inline-block;
+        border-radius: 4px; 
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+    select, input[type=date] {
+        width: 100%;
+        padding: 10px 20px; 
+        margin: 10px 0px; 
+        display: inline-block;
+        border-radius: 4px;
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+    input[type=submit], input[type=button] {
+        width: 100%;
+        margin: 0px 0px 5px 0px;
+        background-color: palevioletred;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+</style>
+</html>
+<body>
+
+    <div class="backcontainer">
+
+        @{
+            if (ViewBag.Message != "")
+            {
+                <div class="container"><h3>@ViewBag.Message</h3></div>
+            }
+        }
+
+        <div class="container">
+            <form action="/Vlasnik/ModifikujCentar" method="post">
+     
+
+                <label for="adresa">Adresa:</label>
+                <input type="text" name="adresa" value="@fitness.Adresa" placeholder="Adresa fitness centra"/>
+
+                <label for="godina">Godina otvaranja:</label> <br />
+
+                <input type="text" value="@fitness.GodinaOtvaranja" name="godina" required />
+                <label for="cenaMesec">Cena jednog meseca:</label>
+                <input type="text" name="cenaMesec" value="@fitness.CenaMesec" />
+                <label for="cenaGodina">Cena godisnje clanarine:</label>
+                <input type="text" name="cenaGodina" value="@fitness.CenaGodina"/>
+
+                <label for="cenaJedan">Cena jednog treninga:</label>
+                <input type="text" name="cenaJedan" value="@fitness.CenaJedan"/>
+
+                <label for="cenaGrupni">Cena grupnog treninga:</label>
+                <input type="text" name="cenaGrupni" value="@fitness.CenaGrupni" />
+
+                <label for="cenaPersonalni">Cena personalnog treninga:</label>
+                <input type="text" name="cenaPersonalni" value="@fitness.CenaPersonalniTrener" />
+
+                <input type="submit" style="cursor:pointer;" value="Modifikuj" />
+                <a href="~/Home/Index"><input type="button" style="background-color:red; cursor:pointer;" value="Otkazi" /></a>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>

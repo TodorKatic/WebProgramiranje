@@ -1,0 +1,109 @@
+﻿@using Web1Proj.Models
+@model IEnumerable<string>
+
+<html>
+<style>
+    body {
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    .backcontainer {
+        width: 100%;
+        margin: auto;
+        background-color: aquamarine;
+        height: 100vh;
+        padding: 50px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: lavender;
+        width: 30%;
+        margin: auto;
+        border-radius: 4px
+    }
+
+    input[type=text], [type=password], input[type=email] {
+        width: 100%;
+        padding: 10px 15px; 
+        margin: 10px 0px; 
+        display: inline-block;
+        border-radius: 4px; 
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+    select, input[type=date] {
+        width: 100%;
+        padding: 10px 20px; 
+        margin: 10px 0px;
+        display: inline-block;
+        border-radius: 4px; 
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+    input[type=submit], input[type=button] {
+        width: 100%;
+        margin: 0px 0px 5px 0px;
+        background-color: palevioletred;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+</style>
+</html>
+<html>
+<body>
+    <div class="backcontainer">
+        <div class="container">
+            <div class="col-lg-offset-5">
+
+                <form action="/Posetilac/KomentarPostavi" method="post">
+
+                    <label for="ocena">Ocena</label>
+                    <select name="ocena">
+                        @{
+                            for (int i = 1; i <= 5; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                    </select>
+
+
+
+                    <label for="tekst">Tekst komentara</label>
+                    <input type="text" name="tekst" class="form-control" />
+
+
+
+
+                    <select name="fitnessCentar">
+                        @{
+                            foreach (var s in Model)
+                            {
+                                <option value="@s">@s</option>
+                            }
+                        }
+                    </select>
+
+
+
+
+
+                    <input type="submit" value="Ostavi komentar" class="btn btn-primary" />
+                    <a href="/Home/Index"><input type="button" style="background-color:purple; cursor:pointer;" value="Otkazi" /></a>
+
+
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

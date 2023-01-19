@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KomentariXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Komentars>
+    <Komentar>
+      <Posetilac>Slavica</Posetilac>
+      <FitnessCentar>NonStop</FitnessCentar>
+      <TekstKomentara>Sve naj</TekstKomentara>
+      <Ocena>5</Ocena>
+      <Odobren>true</Odobren>
+    </Komentar>
+    <Komentar>
+      <Posetilac>Dule</Posetilac>
+      <FitnessCentar>FitnessZone</FitnessCentar>
+      <TekstKomentara>Sve naj</TekstKomentara>
+      <Ocena>5</Ocena>
+      <Odobren>true</Odobren>
+    </Komentar>
+    <Komentar>
+      <Posetilac>Slavica</Posetilac>
+      <FitnessCentar>Kiki</FitnessCentar>
+      <TekstKomentara>Pozdav</TekstKomentara>
+      <Ocena>3</Ocena>
+      <Odobren>true</Odobren>
+    </Komentar>
+    <Komentar>
+      <Posetilac>Slavica</Posetilac>
+      <FitnessCentar>FitnessZone</FitnessCentar>
+      <TekstKomentara>Pozdav</TekstKomentara>
+      <Ocena>1</Ocena>
+      <Odobren>false</Odobren>
+    </Komentar>
+  </Komentars>
+</KomentariXML>

@@ -1,0 +1,126 @@
+﻿@using Web1Proj.Models
+@{ 
+    IEnumerable<GrupniTrening> grupniTrenings = (IEnumerable<GrupniTrening>)HttpContext.Current.Application["OdrzaniTreninzi"];
+}
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: rebeccapurple;
+        overflow: auto;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+        .navbar a {
+            float: left;
+            width: 20%;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .navbar a:hover {
+                background-color: black;
+            }
+
+    .backcontainer {
+        width: 100%;
+        height: 100vh;
+        background-color: aquamarine;
+        border-radius: 4px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: aqua;
+        width: 90%;
+        margin: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 16px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    tr:nth-child(even) {
+        background-color: goldenrod
+    }
+</style>
+</html>
+<body>
+    <div class="backcontainer">
+
+        <div class="container">
+            <form action="/Posetilac/Search" method="post">
+                <input type="text" name="naziv" placeholder="Naziv treninga" />
+                <select name="tip">
+                    @{
+                        <option value="@Enums.TipTreninga.BodyPump">Body pump</option>
+                        <option value="@Enums.TipTreninga.LesMillsTone">Les Mills Tone</option>
+                        <option value="@Enums.TipTreninga.Yoga">Yoga</option>
+                        <option value="" selected></option>
+                    }
+                </select>
+                <input type="text" name="fitnessCentar" placeholder="Naziv fitness centra" />
+                <input type="submit" value="Filtriraj" />
+            </form>
+        </div>
+
+
+        <div class="container">
+            <form action="/Posetilac/Sort" method="post">
+                <select name="parametar">
+                    <option value="naziv" selected>Naziv treninga</option>
+                    <option value="tip">Tip treninga</option>
+                    <option value="vreme">Vreme odrzavanja</option>
+                </select>
+                <select name="vrednost">
+                    <option value="rastuce" selected>Rastuce</option>
+                    <option value="opadajuce">Opadajuce</option>
+                </select>
+                <input type="submit" value="Sortiraj" />
+            </form>
+            <table>
+                <tr>
+                    <th>Naziv treninga</th>
+                    <th>Tip treninga</th>
+                    <th>Vreme odzavanja</th>
+                    <th>Trajanje treninga</th>
+                    <th>Max broj posetilaca</th>
+                    <th>Prijavljen broj</th>
+                </tr>
+                @{
+                    foreach (var t in grupniTrenings)
+                    {
+                        <tr>
+                            <td>@t.Naziv</td>
+                            <td>@t.TipTreninga</td>
+                            <td>@t.VremeOdrzavanja</td>
+                            <td>@t.Trajanje</td>
+                            <td>@t.MaxBroj</td>
+                            <td>@t.Posetioci.Count</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+</body>

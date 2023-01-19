@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VlasniciXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Vlasniks>
+    <Vlasnik>
+      <KorisnickoIme>Loki</KorisnickoIme>
+      <Lozinka>111222</Lozinka>
+      <Ime>Milica</Ime>
+      <Prezime>Milic</Prezime>
+      <PolKorisnika>Muski</PolKorisnika>
+      <Email>Loki@gmail.com</Email>
+      <DatumRodjenja>20/07/1995</DatumRodjenja>
+      <UlogaKorisnika>Vlasnik</UlogaKorisnika>
+      <FitnessCentri>
+        <string>FitnessZone</string>
+      </FitnessCentri>
+    </Vlasnik>
+    <Vlasnik>
+      <KorisnickoIme>Tor</KorisnickoIme>
+      <Lozinka>111222</Lozinka>
+      <Ime>Todor</Ime>
+      <Prezime>Katic</Prezime>
+      <PolKorisnika>Muski</PolKorisnika>
+      <Email>tdr.ktc@gmail.com</Email>
+      <DatumRodjenja>20/08/1993</DatumRodjenja>
+      <UlogaKorisnika>Vlasnik</UlogaKorisnika>
+      <FitnessCentri>
+        <string>Kiki</string>
+        <string>TTTT</string>
+      </FitnessCentri>
+    </Vlasnik>
+  </Vlasniks>
+</VlasniciXML>

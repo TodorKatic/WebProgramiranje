@@ -1,0 +1,74 @@
+﻿<html>
+<style>
+    body {
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    .backcontainer {
+        width: 100%;
+        margin: auto;
+        background-color: aquamarine;
+        height: 100vh;
+        padding: 50px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: lavender;
+        width: 30%;
+        margin: auto;
+        border-radius: 4px
+    }
+
+    input[type=text], [type=password] {
+        width: 100%;
+        padding: 10px 15px; 
+        margin: 10px 0px; 
+        display: inline-block;
+        border-radius: 4px; 
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+
+    input[type=submit], input[type=button] {
+        width: 100%;
+        margin: 0px 0px 5px 0px;
+        background-color: palevioletred;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+</style>
+</html>
+
+<body>
+
+
+
+    <div class="backcontainer">
+
+        <div class="container">
+            @{
+                if (ViewBag.Message != "")
+                {
+                    <h3>@ViewBag.Message</h3>
+                }
+            }
+            <form action="~/Home/Login" method="post">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="username" />
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="password"  />
+                <input type="submit" style="cursor:pointer;" value="Login" />
+                <a href="/Home/Index"><input type="button" style="background-color:chartreuse; cursor:pointer;" value="Cancel" /></a> 
+
+            </form>
+
+        </div>
+    </div>
+
+</body>

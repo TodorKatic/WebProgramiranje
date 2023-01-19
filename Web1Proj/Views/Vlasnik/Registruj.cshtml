@@ -1,0 +1,134 @@
+﻿@using Web1Proj.Models
+@{ 
+    Vlasnik vlasnik = (Vlasnik)HttpContext.Current.Application["Vlasnik"];
+}
+<html>
+<style>
+    body {
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    .backcontainer {
+        width: 100%;
+        margin: auto;
+        background-color: aquamarine;
+        height: 100vh;
+        padding: 50px;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: lavender;
+        width: 30%;
+        margin: auto;
+        border-radius: 4px
+    }
+
+    input[type=text], [type=password], input[type=email] {
+        width: 100%;
+        padding: 10px 15px; 
+        margin: 10px 0px; 
+        display: inline-block;
+        border-radius: 4px; 
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+    select, input[type=date] {
+        width: 100%;
+        padding: 10px 20px; 
+        margin: 10px 0px; 
+        display: inline-block;
+        border-radius: 4px; 
+        border: 1px solid #000000;
+        box-sizing: border-box; 
+    }
+
+    input[type=submit], input[type=button] {
+        width: 100%;
+        margin: 0px 0px 5px 0px;
+        background-color: palevioletred;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+</style>
+</html>
+<body>
+    <div class="backcontainer">
+     <div class="container">
+         <div class="col-lg-offset-5">
+             @{
+                 if (ViewBag.Message != "")
+                 {
+                     <h2>@ViewBag.Message</h2>
+                 }
+             }
+
+             <form action="/Vlasnik/RegistrujKor" method="post">
+                 <div class="form-group">
+                     <label for="korisnickoIme">Korisnicko ime:</label>
+                     <input type="text" name="korisnickoIme" class="form-control" />
+                 </div>
+
+                 <div class="form-group">
+                     <label for="ime">Ime:</label>
+                     <input type="text" class="form-control" name="ime" />
+                 </div>
+
+                 <div class="form-group">
+
+                     <label for="prezime">Prezime:</label>
+                     <input type="text" class="form-control" name="prezime" />
+                 </div>
+                 <div class="form-group">
+                     <label for="pol">Pol:</label>
+                     @{
+                         <select name="pol" class="form-control">
+                             <option value="@Enums.Pol.Muski">Muski</option>
+                             <option value="@Enums.Pol.Zenski">Zenski</option>
+                         </select>
+                     }
+                 </div>
+
+                 <div class="form-group">
+                     <label for="email">Email:</label>
+                     <input type="email" class="form-control" name="email" />
+                 </div>
+
+                 <div class="form-group">
+                     <label for="datumRodjenja">Datum rodjenja:</label>
+                     @{
+                         <input type="date" min="1940-01-01" class="form-control" name="datumRodjenja" required />
+                     }
+                 </div>
+
+                 <div class="form-group">
+                     <label for="fitnessCentri">Fitness:</label>
+                     @{
+                         <select name="centar" class="form-control">
+                             @{
+                                 foreach (var s in vlasnik.FitnessCentri)
+                                 {
+                                     <option value="@s">@s</option>
+                                 }
+                             }
+                         </select>
+                     }
+                 </div>
+
+                 <div class="form-group">
+                     <input type="submit" class="btn btn-primary" value="Register" />
+                     <a href="~/Home/Index"><input type="button" style="background-color:red; cursor:pointer;" value="Otkazi" /></a>
+                 </div>
+
+
+
+
+             </form>
+         </div>
+    </div>
+    </div>
+</body>
